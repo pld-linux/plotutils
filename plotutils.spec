@@ -5,24 +5,24 @@ Summary(pl):	Narzêdzia do wykresów
 Name:		plotutils
 Version:	2.2
 Release:	2
-Copyright:	GPL
+License:	GPL
 Group:		Applications/Graphics
 Group(pl):	Aplikacje/Grafika
-Source:		%{name}-%{version}.tar.gz
+Source0:	%{name}-%{version}.tar.gz
 URL:		http://www.gnu.org/software/plotutils/plotutils.html
 Requires:	libplot
 BuildRequires:	libstdc++
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-GNU plotutils (plotting utilities) package,
-graphics under the X Window System.  The Web page for the package is:
+GNU plotutils (plotting utilities) package, graphics under the X
+Window System. The Web page for the package is:
 http://www.gnu.org/software/plotutils/plotutils.html
 
 %description -l pl
 GNU Plotutils to pakiet zawieraj±cy narzêdzia do tworzenia wykresów.
-Umo¿liwiaj± one wy¶wietlanie wykresów w oknie X Window i zapisywanie
-w formatach takich jak .pnm .gif .ai .ps .fig .pcl .hpgl .tek
+Umo¿liwiaj± one wy¶wietlanie wykresów w oknie X Window i zapisywanie w
+formatach takich jak .pnm .gif .ai .ps .fig .pcl .hpgl .tek
 http://www.gnu.org/software/plotutils/plotutils.html
 
 ################################################################
@@ -30,22 +30,24 @@ http://www.gnu.org/software/plotutils/plotutils.html
 Summary:	Libplot plotting library - from plotutils package
 Summary(pl):	Libplot -- Biblioteka do kre¶lenia z pakietu plotutils
 Group:		Development/Libraries
+Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Version:	%{LIBPLOT_VERSION}
 
 %description libplot
-GNU libplot: a function library for exporting two-dimensional
-vector graphics files, and for displaying animated vector.
+GNU libplot: a function library for exporting two-dimensional vector
+graphics files, and for displaying animated vector.
 
 %description -l pl libplot
-GNU libplot: biblioteka do tworzenia dwuwymiarowej grafiki wektorowej lub
-wy¶wietlania animowanych obrazów wektorowych pod X Window.
+GNU libplot: biblioteka do tworzenia dwuwymiarowej grafiki wektorowej
+lub wy¶wietlania animowanych obrazów wektorowych pod X Window.
 
 ##################################################################
 %package libplot-devel
 Summary:	Libplot header files
 Summary(pl):	Pliki nag³ówkowe dla libplot
 Group:		Development/Libraries
+Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Version:	%{LIBPLOT_VERSION}
 
@@ -57,6 +59,7 @@ Pliki nag³ówkowe dla libplot
 Summary:	Libplot static libraries
 Summary(pl):	Biblioteki statyczne libplot
 Group:		Development/Libraries
+Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Requires:	plotutils-libplot-devel = %{LIBPLOT_VERSION}
 Version:	%{LIBPLOT_VERSION}
@@ -76,13 +79,13 @@ autoconf
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 CXXFLAGS="$RPM_OPT_FLAGS" \
 ./configure %{_target_platform} \
-	--prefix=/usr 
+	--prefix=%{_prefix}
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 make install \
-	prefix=$RPM_BUILD_ROOT/usr
+prefix=$RPM_BUILD_ROOT%{_prefix}
 
 strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so
 
