@@ -260,7 +260,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n libplot-devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libplot.so
-%attr(755,root,root) %{_libdir}/libplot.la
+%{_libdir}/libplot.la
 %{_examplesdir}/libplot-%{LIBPLOT_VERSION}
 %{_includedir}/plot.h
 %{_includedir}/plotcompat.h
@@ -276,7 +276,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n libplotter-devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libplotter.so
-%attr(755,root,root) %{_libdir}/libplotter.la
+%{_libdir}/libplotter.la
 %{_includedir}/plotter.h
 
 %files -n libplotter-static
@@ -292,7 +292,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_infodir}/libxmi.info*
 %attr(755,root,root) %{_libdir}/libxmi.so
-%attr(755,root,root) %{_libdir}/libxmi.la
+%{_libdir}/libxmi.la
 %{_includedir}/xmi.h
 
 %files -n libxmi-static
