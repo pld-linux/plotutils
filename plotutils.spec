@@ -11,7 +11,7 @@ Group(pl):	Aplikacje/Grafika
 Source:		%{name}-%{version}.tar.gz
 URL:		http://www.gnu.org/software/plotutils/plotutils.html
 Requires:	libplot
-BuildPrereq:	libstdc++
+BuildRequires:	libstdc++
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
