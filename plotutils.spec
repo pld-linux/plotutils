@@ -226,25 +226,25 @@ rm -rf $RPM_BUILD_ROOT
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%post -n libxmi-devel
+%post	-n libxmi-devel
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%postun -n libxmi-devel
+%postun	-n libxmi-devel
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%post   -n libplot
+%post	-n libplot
 /sbin/ldconfig
 [ ! -x /usr/X11R6/bin/mkfontdir ] || /usr/X11R6/bin/mkfontdir %{_fontsdir}/misc
 
-%postun -n libplot
+%postun	-n libplot
 /sbin/ldconfig
 [ ! -x /usr/X11R6/bin/mkfontdir ] || /usr/X11R6/bin/mkfontdir %{_fontsdir}/misc
 
-%post   -n libplotter -p /sbin/ldconfig
-%postun -n libplotter -p /sbin/ldconfig
+%post	-n libplotter -p /sbin/ldconfig
+%postun	-n libplotter -p /sbin/ldconfig
 
-%post   -n libxmi -p /sbin/ldconfig
-%postun -n libxmi -p /sbin/ldconfig
+%post	-n libxmi -p /sbin/ldconfig
+%postun	-n libxmi -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
