@@ -66,8 +66,8 @@ interaktywnym programem do rozwi±zywania uk³adów równañ ró¿niczkowych.
 %package -n libplot
 Summary:	libplot plotting library - from plotutils package
 Summary(pl):	libplot -- Biblioteka do kre¶lenia z pakietu plotutils
-Group:		Development/Libraries
 Version:	%{LIBPLOT_VERSION}
+Group:		Development/Libraries
 
 %description -n libplot
 GNU libplot: a function library for exporting two-dimensional vector
@@ -80,9 +80,11 @@ lub wy¶wietlania animowanych obrazów wektorowych pod X Window.
 %package -n libplot-devel
 Summary:	libplot header files
 Summary(pl):	Pliki nag³ówkowe dla libplot
+Version:	%{LIBPLOT_VERSION}
 Group:		Development/Libraries
 Requires:	libplot = %{LIBPLOT_VERSION}
-Version:	%{LIBPLOT_VERSION}
+Requires:	XFree86-devel
+Requires:	libpng-devel
 
 %description -n libplot-devel
 libplot header files.
@@ -91,14 +93,14 @@ libplot header files.
 Pliki nag³ówkowe dla libplot.
 
 %package -n libplot-static
-Summary:	libplot static libraries
-Summary(pl):	Biblioteki statyczne libplot
+Summary:	libplot static library
+Summary(pl):	Biblioteka statyczna libplot
+Version:	%{LIBPLOT_VERSION}
 Group:		Development/Libraries
 Requires:	libplot-devel = %{LIBPLOT_VERSION}
-Version:	%{LIBPLOT_VERSION}
 
 %description -n libplot-static
-libplot static libraries.
+libplot static library.
 
 %description -n libplot-static -l pl
 Biblioteka statyczna libplot.
@@ -106,8 +108,8 @@ Biblioteka statyczna libplot.
 %package -n libplotter
 Summary:	libplotter plotting library - from plotutils package
 Summary(pl):	libplotter - biblioteka do kre¶lenia z pakietu plotutils
-Group:		Development/Libraries
 Version:	%{LIBPLOT_VERSION}
+Group:		Development/Libraries
 
 %description -n libplotter
 GNU libplotter: a function library for exporting two-dimensional
@@ -121,9 +123,12 @@ Window.
 %package -n libplotter-devel
 Summary:	libplotter header files
 Summary(pl):	Pliki nag³ówkowe dla libplotter
+Version:	%{LIBPLOT_VERSION}
 Group:		Development/Libraries
 Requires:	libplotter = %{LIBPLOT_VERSION}
-Version:	%{LIBPLOT_VERSION}
+Requires:	XFree86-devel
+Requires:	libpng-devel
+Requires:	libstdc++-devel
 
 %description -n libplotter-devel
 libplotter header files.
@@ -132,14 +137,14 @@ libplotter header files.
 Pliki nag³ówkowe dla libplotter.
 
 %package -n libplotter-static
-Summary:	libplotter static libraries
-Summary(pl):	Biblioteki statyczne libplotter
+Summary:	libplotter static library
+Summary(pl):	Biblioteka statyczna libplotter
+Version:	%{LIBPLOT_VERSION}
 Group:		Development/Libraries
 Requires:	libplotter-devel = %{LIBPLOT_VERSION}
-Version:	%{LIBPLOT_VERSION}
 
 %description -n libplotter-static
-libplotter static libraries.
+libplotter static library.
 
 %description -n libplotter-static -l pl
 Biblioteka statyczna libplotter.
@@ -147,8 +152,8 @@ Biblioteka statyczna libplotter.
 %package -n libxmi
 Summary:	libxmi library - from plotutils package
 Summary(pl):	libxmi - biblioteka z pakietu plotutils
-Group:		Development/Libraries
 Version:	%{LIBXMI_VERSION}
+Group:		Development/Libraries
 
 %description -n libxmi
 GNU libxmi: a function library for exporting two-dimensional vector
@@ -161,9 +166,9 @@ lub wy¶wietlania animowanych obrazów wektorowych pod X Window.
 %package -n libxmi-devel
 Summary:	libxmi header files
 Summary(pl):	Pliki nag³ówkowe dla libxmi
+Version:	%{LIBXMI_VERSION}
 Group:		Development/Libraries
 Requires:	libxmi = %{LIBXMI_VERSION}
-Version:	%{LIBXMI_VERSION}
 
 %description -n libxmi-devel
 libxmi header files.
@@ -172,14 +177,14 @@ libxmi header files.
 Pliki nag³ówkowe dla libxmi.
 
 %package -n libxmi-static
-Summary:	Libxmi static libraries
-Summary(pl):	Biblioteki statyczne libxmi
+Summary:	Libxmi static library
+Summary(pl):	Biblioteka statyczna libxmi
+Version:	%{LIBXMI_VERSION}
 Group:		Development/Libraries
 Requires:	libxmi-devel = %{LIBXMI_VERSION}
-Version:	%{LIBXMI_VERSION}
 
 %description -n libxmi-static
-libxmi static libraries.
+libxmi static library.
 
 %description -n libxmi-static -l pl
 Biblioteka statyczna libxmi.
