@@ -133,9 +133,3 @@ fi
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.a
     
-
-%changelog
-* Sat May 15 1999 Rafa³ Kleger-Rudomin <klakier@pg.gda.pl>
-- Added plotutils-libplot, -devel, -static 
-* Fri May 14 1999 Rafa³ Kleger-Rudomin <klakier@pg.gda.pl>
-- Initial version for PLD.
