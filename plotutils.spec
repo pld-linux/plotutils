@@ -5,13 +5,14 @@ Summary:	GNU Plotutils -- plotting utilities
 Summary(pl):	Narzêdzia do wykresów
 Name:		plotutils
 Version:	2.4.1
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/Graphics
 Group(de):	Applikationen/Grafik
 Group(pl):	Aplikacje/Grafika
 Source0:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
+Patch1:		%{name}-c++.patch
 URL:		http://www.gnu.org/software/plotutils/plotutils.html
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
@@ -203,6 +204,7 @@ Biblioteka statyczna libxmi.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 libtoolize --copy --force
