@@ -21,8 +21,6 @@ BuildRequires:	texinfo
 Requires:	libplot
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_fontdir	/usr/share/fonts
-
 %description
 The GNU plotting utilities include: (1) GNU libplot, a shared library
 for exporting 2-D vector graphics files and for performing vector
@@ -204,7 +202,7 @@ Biblioteka statyczna libxmi.
 %patch0 -p1
 
 %build
-CXXFLAGS="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS -fno-rtti -fno-exceptions}"
+CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
 %configure \
 	--enable-libplotter \
 	--enable-libxmi
@@ -212,15 +210,15 @@ CXXFLAGS="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS -fno-rtti -fno-exceptions}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_examplesdir}/libplot-%{LIBPLOT_VERSION},%{_fontdir}/misc}
+install -d $RPM_BUILD_ROOT{%{_examplesdir}/libplot-%{LIBPLOT_VERSION},%{_fontsdir}/misc}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 install doc/h-demo.c $RPM_BUILD_ROOT%{_examplesdir}/libplot-%{LIBPLOT_VERSION}
-install fonts/pcf/*.pcf $RPM_BUILD_ROOT%{_fontdir}/misc
+install fonts/pcf/*.pcf $RPM_BUILD_ROOT%{_fontsdir}/misc
 
-gzip -9nf $RPM_BUILD_ROOT%{_fontdir}/misc/* \
+gzip -9nf $RPM_BUILD_ROOT%{_fontsdir}/misc/* \
 	AUTHORS COMPAT KNOWN_BUGS NEWS ONEWS PROBLEMS README THANKS TODO \
 	doc/{demo-page,*.doc,*.txt,*.bib} \
 	libplot/{DEDICATION,HUMOR,README*,VERSION} \
@@ -241,8 +239,13 @@ rm -rf $RPM_BUILD_ROOT
 %postun -n libxmi-devel
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%post   -n libplot -p /sbin/ldconfig
-%postun -n libplot -p /sbin/ldconfig
+%post   -n libplot
+/sbin/ldconfig
+[ ! -x /usr/X11R6/bin/mkfontdir ] || /usr/X11R6/bin/mkfontdir %{_fontsdir}/misc
+
+%postun -n libplot
+/sbin/ldconfig
+[ ! -x /usr/X11R6/bin/mkfontdir ] || /usr/X11R6/bin/mkfontdir %{_fontsdir}/misc
 
 %post   -n libplotter -p /sbin/ldconfig
 %postun -n libplotter -p /sbin/ldconfig
@@ -264,7 +267,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc doc/*.gz
 %attr(755,root,root) %{_libdir}/libplot.so.*.*
-%{_fontdir}/misc/*
+%{_fontsdir}/misc/*
 
 %files -n libplot-devel
 %defattr(644,root,root,755)
