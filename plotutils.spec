@@ -86,7 +86,7 @@ make install \
 
 strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so
 
-gzip -9nf $RPM_BUILD_ROOT/usr/share/{info/*.info*,man/man1/*} \
+gzip -9nf $RPM_BUILD_ROOT%{_datadir}/{info/*.info*,man/man1/*} \
 	AUTHORS COMPAT COPYING KNOWN_BUGS NEWS ONEWS README ChangeLog \
 	PROBLEMS THANKS TODO \
 	libplot\README*
@@ -112,9 +112,9 @@ fi
 %attr(755,root,root) /usr/bin/*
 %{_infodir}/*.info*
 %{_mandir}/man1/*
-/usr/share/libplot
-/usr/share/ode
-/usr/share/tek2plot
+%{_datadir}/libplot
+%{_datadir}/ode
+%{_datadir}/tek2plot
 
 #####################################
 %files libplot
