@@ -80,7 +80,7 @@ CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 CXXFLAGS="$RPM_OPT_FLAGS" \
 ./configure %{_target_platform} \
 	--prefix=%{_prefix}
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
