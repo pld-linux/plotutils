@@ -126,7 +126,7 @@ fi
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
 %doc libplot/README*.gz
-/usr/include/*
+%{_includedir}/*
 
 #####################################
 %files libplot-static
