@@ -5,7 +5,7 @@ Summary:	GNU Plotutils -- plotting utilities
 Summary(pl):	Narzêdzia do wykresów
 Name:		plotutils
 Version:	2.4.1
-Release:	4
+Release:	5
 License:	GPL
 Group:		Applications/Graphics
 Source0:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.gz
@@ -38,18 +38,29 @@ of GNU libplot. 'graph' is a powerful utility for XY plotting, 'plot'
 translates GNU metafiles to other formats, 'tek2plot' translates
 legacy Tektronix data, 'pic2plot' translates box-and-arrow diagrams in
 the pic language, and 'plotfont' plots character maps. (3)
-Command-line applications 'spline', 'double', and e', which are useful
-in scientific plotting. 'spline' does spline interpolation of input
-data of arbitrary dimensionality. It uses cubic splines, splines under
-tension, or cubic Bessel interpolation. e' is an interactive program
-that can integrate a user-specified system of ordinary differential
-equations.
+Command-line applications 'spline', 'double', and 'ode', which are
+useful in scientific plotting. 'spline' does spline interpolation of
+input data of arbitrary dimensionality. It uses cubic splines, splines
+under tension, or cubic Bessel interpolation. 'ode' is an interactive
+program that can integrate a user-specified system of ordinary
+differential equations.
 
 %description -l pl
 GNU Plotutils to pakiet zawieraj±cy narzêdzia do tworzenia wykresów.
-Umo¿liwiaj± one wy¶wietlanie wykresów w oknie X Window i zapisywanie w
-formatach takich jak .pnm .gif .ai .ps .fig .pcl .hpgl .tek
-http://www.gnu.org/software/plotutils/plotutils.html
+Sk³ada siê z biblioteki GNU libplot, przyk³adowych programów
+dzia³aj±cych z linii poleceñ oraz aplikacji. GNU libplot to biblioteka
+do tworzenia plików z grafik± wektorow± 2D i odtwarzania animowanej
+grafiki wektorowej w ¶rodowisku X Window System. libplot potrafi
+zapisywaæ w formatach m.in. GIF, PNM, Adobe Illustrator, Postscript,
+Fig, PCL 5, HP-GL i GP-GL/2, Tektronix i GNU metafile. Obs³uguje wiele
+fontów Postscriptowych, PCL i Hershey. Oddzielna biblioteka libplotter
+daje interfejs C++ do funkcji libplot. Programy przyk³adowe to graph,
+plot, tek2plot, pic2plot i plotfont; pierwszy s³u¿y do rysowania, trzy
+kolejne do konwersji miêdzy ró¿nymi formatami, ostatni do wy¶wietlania
+fontów. Aplikacje zawarte w pakiecie plotutils to spline, double oraz
+ode, przydatne do rysunków naukowych. spline tworzy interpolacjê
+splajnami dostarczonych danych o dowolnej liczbie wymiarów. ode jest
+interaktywnym programem do rozwi±zywania uk³adów równañ ró¿niczkowych.
 
 %package -n libplot
 Summary:	libplot plotting library - from plotutils package
@@ -182,8 +193,11 @@ libtoolize --copy --force
 aclocal
 autoconf
 automake -a -c -f
+if [ -f %{_pkgconfigdir}/libpng12.pc ] ; then
+	CPPFLAGS="`pkg-config libpng12 --cflags`"
+fi
 CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
-%configure \
+%configure CPPFLAGS="$CPPFLAGS" \
 	--enable-libplotter \
 	--enable-libxmi
 %{__make}
