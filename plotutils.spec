@@ -193,7 +193,7 @@ biblioteka statyczna libxmi
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_examplesdir}/libplot-%{LIBPLOT_VERSION}
+install -d $RPM_BUILD_ROOT{%{_examplesdir}/libplot-%{LIBPLOT_VERSION},/usr/share/fonts/misc}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
