@@ -109,7 +109,7 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc *.gz doc
-%attr(755,root,root) /usr/bin/*
+%attr(755,root,root) %{_bindir}/*
 %{_infodir}/*.info*
 %{_mandir}/man1/*
 %{_datadir}/libplot
