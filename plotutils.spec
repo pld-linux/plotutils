@@ -9,6 +9,7 @@ Release:	6
 License:	GPL
 Group:		Applications/Graphics
 Source0:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	8da2cc2ed5a837cad0753c7843ef18ee
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-c++.patch
 URL:		http://www.gnu.org/software/plotutils/plotutils.html
