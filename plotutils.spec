@@ -12,6 +12,7 @@ Source:		%{name}-%{version}.tar.gz
 URL:		http://www.gnu.org/software/plotutils/plotutils.html
 Requires:	libplot
 BuildRequires:	libstdc++
+Prereq:		/usr/sbin/fix-info-dir
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -96,12 +97,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
-/sbin/install-info %{_infodir}/%{name}.info.gz /etc/info-dir
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %preun
-if [ "$1" = "0" ]; then
-	/sbin/install-info --delete %{_infodir}/%{name}.info.gz /etc/info-dir
-fi
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun -p /sbin/ldconfig
 
