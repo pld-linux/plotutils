@@ -58,8 +58,12 @@ Summary:	libplot plotting library - from plotutils package
 Summary(pl):	libplot -- Biblioteka do kre╤lenia z pakietu plotutils
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 Version:	%{LIBPLOT_VERSION}
 
 %description -n libplot
@@ -75,8 +79,12 @@ Summary:	libplot header files
 Summary(pl):	Pliki nagЁСwkowe dla libplot
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	libplot = %{LIBPLOT_VERSION}
 Version:	%{LIBPLOT_VERSION}
 
@@ -91,8 +99,12 @@ Summary:	libplot static libraries
 Summary(pl):	Biblioteki statyczne libplot
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	libplot-devel = %{LIBPLOT_VERSION}
 Version:	%{LIBPLOT_VERSION}
 
@@ -107,8 +119,12 @@ Summary:	libplotter plotting library - from plotutils package
 Summary(pl):	libplotter - biblioteka do kre╤lenia z pakietu plotutils
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 Version:	%{LIBPLOT_VERSION}
 
 %description -n libplotter
@@ -125,8 +141,12 @@ Summary:	libplotter header files
 Summary(pl):	Pliki nagЁСwkowe dla libplotter
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	libplotter = %{LIBPLOT_VERSION}
 Version:	%{LIBPLOT_VERSION}
 
@@ -141,8 +161,12 @@ Summary:	libplotter static libraries
 Summary(pl):	Biblioteki statyczne libplotter
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	libplotter-devel = %{LIBPLOT_VERSION}
 Version:	%{LIBPLOT_VERSION}
 
@@ -157,8 +181,12 @@ Summary:	libxmi library - from plotutils package
 Summary(pl):	libxmi - biblioteka z pakietu plotutils
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 Version:	%{LIBXMI_VERSION}
 
 %description -n libxmi
@@ -174,8 +202,12 @@ Summary:	libxmi header files
 Summary(pl):	Pliki nagЁСwkowe dla libxmi
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	libxmi = %{LIBXMI_VERSION}
 Version:	%{LIBXMI_VERSION}
 
@@ -190,8 +222,12 @@ Summary:	Libxmi static libraries
 Summary(pl):	Biblioteki statyczne libxmi
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	libxmi-devel = %{LIBXMI_VERSION}
 Version:	%{LIBXMI_VERSION}
 
