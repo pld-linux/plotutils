@@ -84,7 +84,7 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install \
+%{__make} install \
 prefix=$RPM_BUILD_ROOT%{_prefix}
 
 strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so
