@@ -1,16 +1,17 @@
-%define	LIBPLOT_VERSION 2.0
+%define	LIBPLOT_VERSION 4.0
+%define	LIBXMI_VERSION 1.2
 
 Summary:	GNU Plotutils -- plotting utilities
 Summary(pl):	Narzêdzia do wykresów
 Name:		plotutils
-Version:	2.2
-Release:	2
+Version:	2.4
+Release:	1
 License:	GPL
 Group:		Applications/Graphics
+Group(de):	Applikationen/Grafik
 Group(pl):	Aplikacje/Grafika
 Source0:	%{name}-%{version}.tar.gz
 URL:		http://www.gnu.org/software/plotutils/plotutils.html
-Requires:	libplot
 BuildRequires:	libstdc++
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -25,111 +26,247 @@ Umo¿liwiaj± one wy¶wietlanie wykresów w oknie X Window i zapisywanie w
 formatach takich jak .pnm .gif .ai .ps .fig .pcl .hpgl .tek
 http://www.gnu.org/software/plotutils/plotutils.html
 
-################################################################
-%package libplot
+%package -n libplot
 Summary:	Libplot plotting library - from plotutils package
 Summary(pl):	Libplot -- Biblioteka do kre¶lenia z pakietu plotutils
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Version:	%{LIBPLOT_VERSION}
 
-%description libplot
+%description -n libplot
 GNU libplot: a function library for exporting two-dimensional vector
 graphics files, and for displaying animated vector.
 
-%description -l pl libplot
+%description -l pl -n libplot
 GNU libplot: biblioteka do tworzenia dwuwymiarowej grafiki wektorowej
 lub wy¶wietlania animowanych obrazów wektorowych pod X Window.
 
-##################################################################
-%package libplot-devel
+%package -n libplot-devel
 Summary:	Libplot header files
 Summary(pl):	Pliki nag³ówkowe dla libplot
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Requires:	libplot = %{LIBPLOT_VERSION}
 Version:	%{LIBPLOT_VERSION}
 
-%description -l pl libplot-devel
+%description -l pl -n libplot-devel
 Pliki nag³ówkowe dla libplot
 
-#################################################################
-%package libplot-static
+%package -n libplot-static
 Summary:	Libplot static libraries
 Summary(pl):	Biblioteki statyczne libplot
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
-Requires:	plotutils-libplot-devel = %{LIBPLOT_VERSION}
+Requires:	libplot-devel = %{LIBPLOT_VERSION}
 Version:	%{LIBPLOT_VERSION}
 
-%description libplot-static
+%description -n libplot-static
 libplot static libraries
 
-%description -l pl libplot-static
+%description -l pl -n libplot-static
 biblioteka statyczna libplot
 
-##################################
+%package -n libplotter
+Summary:	Libplot plotting library - from plotutils package
+Summary(pl):	Libplot -- Biblioteka do kre¶lenia z pakietu plotutils
+Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
+Version:	%{LIBPLOT_VERSION}
+
+%description -n libplotter
+GNU libplotter: a function library for exporting two-dimensional
+vector graphics files, and for displaying animated vector.
+
+%description -l pl -n libplotter
+GNU libplotter: biblioteka do tworzenia dwuwymiarowej grafiki
+wektorowej lub wy¶wietlania animowanych obrazów wektorowych pod X
+Window.
+
+%package -n libplotter-devel
+Summary:	Libplot header files
+Summary(pl):	Pliki nag³ówkowe dla libplotter
+Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
+Requires:	libplotter = %{LIBPLOT_VERSION}
+Version:	%{LIBPLOT_VERSION}
+
+%description -l pl -n libplotter-devel
+Pliki nag³ówkowe dla libplotter
+
+%package -n libplotter-static
+Summary:	Libplot static libraries
+Summary(pl):	Biblioteki statyczne libplotter
+Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
+Requires:	libplotter-devel = %{LIBPLOT_VERSION}
+Version:	%{LIBPLOT_VERSION}
+
+%description -n libplotter-static
+libplotter static libraries
+
+%description -l pl -n libplotter-static
+biblioteka statyczna libplotter
+
+%package -n libxmi
+Summary:	Libplot plotting library - from plotutils package
+Summary(pl):	Libplot -- Biblioteka do kre¶lenia z pakietu plotutils
+Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
+Version:	%{LIBXMI_VERSION}
+
+%description -n libxmi
+GNU libxmi: a function library for exporting two-dimensional vector
+graphics files, and for displaying animated vector.
+
+%description -l pl -n libxmi
+GNU libxmi: biblioteka do tworzenia dwuwymiarowej grafiki wektorowej
+lub wy¶wietlania animowanych obrazów wektorowych pod X Window.
+
+%package -n libxmi-devel
+Summary:	Libplot header files
+Summary(pl):	Pliki nag³ówkowe dla libxmi
+Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
+Requires:	libxmi = %{LIBXMI_VERSION}
+Version:	%{LIBXMI_VERSION}
+
+%description -l pl -n libxmi-devel
+Pliki nag³ówkowe dla libxmi
+
+%package -n libxmi-static
+Summary:	Libplot static libraries
+Summary(pl):	Biblioteki statyczne libxmi
+Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
+Requires:	libxmi-devel = %{LIBXMI_VERSION}
+Version:	%{LIBXMI_VERSION}
+
+%description -n libxmi-static
+libxmi static libraries
+
+%description -l pl -n libxmi-static
+biblioteka statyczna libxmi
+
 %prep
 %setup -q
 
 %build
-autoconf
-CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
-CXXFLAGS="$RPM_OPT_FLAGS" \
-./configure %{_target_platform} \
-	--prefix=%{_prefix}
+%configure \
+	--enable-libplotter \
+	--enable-libxmi
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
-prefix=$RPM_BUILD_ROOT%{_prefix}
-
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so
-
-gzip -9nf $RPM_BUILD_ROOT%{_datadir}/{info/*.info*,man/man1/*} \
-	AUTHORS COMPAT COPYING KNOWN_BUGS NEWS ONEWS README ChangeLog \
-	PROBLEMS THANKS TODO \
-	libplot\README*
+	DESTDIR=$RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_examplesdir}/libplot-%{LIBPLOT_VERSION},/usr/share/fonts/misc}
+install doc/h-demo.c $RPM_BUILD_ROOT%{_examplesdir}/libplot-%{LIBPLOT_VERSION}
+install fonts/pcf/*.pcf $RPM_BUILD_ROOT/usr/share/fonts/misc
+gzip $RPM_BUILD_ROOT/usr/share/fonts/misc/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post
-/sbin/ldconfig
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun 
-/sbin/ldconfig
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-#######################################
+%post -n libplot
+/sbin/ldconfig
+
+%postun -n libplot
+/sbin/ldconfig
+
+%post -n libplotter
+/sbin/ldconfig
+
+%postun -n libplotter
+/sbin/ldconfig
+
+%post -n libxmi
+/sbin/ldconfig
+
+%postun -n libxmi
+/sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
-%doc *.gz doc
+%doc AUTHORS* COMPAT* KNOWN_BUGS* NEWS* ONEWS* README* ChangeLog* PROBLEMS* THANKS* TODO* 
+
 %attr(755,root,root) %{_bindir}/*
-%{_infodir}/*.info*
+%{_infodir}/plotutils.info*
 %{_mandir}/man1/*
-%{_datadir}/libplot
 %{_datadir}/ode
+%{_datadir}/pic2plot
 %{_datadir}/tek2plot
 
-#####################################
-%files libplot
+%files -n libplot
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%doc doc/*.doc* doc/*.txt* doc/demo-page* doc/hershey.bib*
+%attr(755,root,root) %{_libdir}/libplot.so.*.*
+/usr/share/fonts/misc/*
 
-#####################################
-%files libplot-devel
+%files -n libplot-devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%doc libplot/README*.gz
-%{_includedir}/*
+%attr(755,root,root) %{_libdir}/libplot.so
+%attr(755,root,root) %{_libdir}/libplot.la
+%doc libplot/README*
+%doc libplot/DEDICATION*
+%{_examplesdir}/libplot-%{LIBPLOT_VERSION}
+%{_includedir}/plot.h
+%{_includedir}/plotcompat.h
 
-#####################################
-%files libplot-static
+%files -n libplot-static
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.a
+%attr(755,root,root) %{_libdir}/libplot.a
+ 
+%files -n libplotter
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libplotter.so.*.*
+
+%files -n libplotter-devel
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libplotter.so
+%attr(755,root,root) %{_libdir}/libplotter.la
+%{_includedir}/plotter.h
+
+%files -n libplotter-static
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libplotter.a
+
+%files -n libxmi
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libxmi.so.*.*
+
+%files -n libxmi-devel
+%defattr(644,root,root,755)
+%{_infodir}/libxmi.info*
+%attr(755,root,root) %{_libdir}/libxmi.so
+%attr(755,root,root) %{_libdir}/libxmi.la
+%{_includedir}/xmi.h
+
+%files -n libxmi-static
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libxmi.a
     
