@@ -13,7 +13,7 @@ URL:		http://www.gnu.org/software/plotutils/plotutils.html
 Requires:	libplot
 BuildRequires:	libstdc++
 Prereq:		/usr/sbin/fix-info-dir
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 GNU plotutils (plotting utilities) package,
