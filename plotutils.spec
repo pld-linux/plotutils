@@ -1,5 +1,7 @@
-Summary:	GNU Plotutils and libplot -- plotting utilities
-Summary(pl):	Narzêdzia do wykresów wraz z bibliotek± libplot
+%define	LIBPLOT_VERSION 2.0
+
+Summary:	GNU Plotutils -- plotting utilities
+Summary(pl):	Narzêdzia do wykresów
 Name:		plotutils
 Version:	2.2
 Release:	1
@@ -8,22 +10,64 @@ Group:		Applications/Graphics
 Group(pl):	Aplikacje/Grafika
 Source:		%{name}-%{version}.tar.gz
 URL:		http://www.gnu.org/software/plotutils/plotutils.html
+Requires:	libplot
 BuildPrereq:	libstdc++
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
-GNU plotutils (plotting utilities) package,                         
-including GNU libplot: a function library for exporting                         
-two-dimensional vector graphics files, and for displaying animated vector                      
-graphics under the X Window System.  The Web page for the package is:                          
-http://www.gnu.org/software/plotutils/plotutils.html .  
+GNU plotutils (plotting utilities) package,
+graphics under the X Window System.  The Web page for the package is:
+http://www.gnu.org/software/plotutils/plotutils.html
 
 %description -l pl
-GNU Plotutils to pakiet zawieraj±cy GNU libplot: bibliotekê do tworzenia
-dwuwymiarowej grafiki wektorowej lub wy¶wietalnia animowanych obrazów
-wektorowych pod X Window. Plotutils umo¿liwiaj± tak¿e przetwarzanie plików
-w formacie GNU metafile do formatów .pnm .gif .ai .ps .fig .pcl .hpgl .tek
+GNU Plotutils to pakiet zawieraj±cy narzêdzia do tworzenia wykresów.
+Umo¿liwiaj± one wy¶wietlanie wykresów w oknie X Window i zapisywanie
+w formatach takich jak .pnm .gif .ai .ps .fig .pcl .hpgl .tek
+http://www.gnu.org/software/plotutils/plotutils.html
 
+################################################################
+%package libplot
+Summary:	Libplot plotting library - from plotutils package
+Summary(pl):	Libplot -- Biblioteka do kre¶lenia z pakietu plotutils
+Group:		Development/Libraries
+Group(pl):	Programowanie/Biblioteki
+Version:	%{LIBPLOT_VERSION}
+
+%description libplot
+GNU libplot: a function library for exporting two-dimensional
+vector graphics files, and for displaying animated vector.
+
+%description -l pl libplot
+GNU libplot: biblioteka do tworzenia dwuwymiarowej grafiki wektorowej lub
+wy¶wietlania animowanych obrazów wektorowych pod X Window.
+
+##################################################################
+%package libplot-devel
+Summary:	Libplot header files
+Summary(pl):	Pliki nag³ówkowe dla libplot
+Group:		Development/Libraries
+Group(pl):	Programowanie/Biblioteki
+Version:	%{LIBPLOT_VERSION}
+
+%description -l pl libplot-devel
+Pliki nag³ówkowe dla libplot
+
+#################################################################
+%package libplot-static
+Summary:	Libplot static libraries
+Summary(pl):	Biblioteki statyczne libplot
+Group:		Development/Libraries
+Group(pl):	Programowanie/Biblioteki
+Requires:	plotutils-libplot-devel = %{LIBPLOT_VERSION}
+Version:	%{LIBPLOT_VERSION}
+
+%description libplot-static
+libplot static libraries
+
+%description -l pl libplot-static
+biblioteka statyczna libplot
+
+##################################
 %prep
 %setup -q
 
@@ -40,11 +84,12 @@ rm -rf $RPM_BUILD_ROOT
 make install \
 	prefix=$RPM_BUILD_ROOT/usr
 
-strip --strip-unneeded $RPM_BUILD_ROOT/usr/lib/lib*so
+strip --strip-unneeded $RPM_BUILD_ROOT/usr/lib/lib*.so
 
 gzip -9nf $RPM_BUILD_ROOT/usr/share/{info/*.info*,man/man1/*} \
 	AUTHORS COMPAT COPYING KNOWN_BUGS NEWS ONEWS README ChangeLog \
-	PROBLEMS THANKS TODO
+	PROBLEMS THANKS TODO \
+	libplot\README*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -60,18 +105,37 @@ fi
 
 %postun -p /sbin/ldconfig
 
+#######################################
 %files
 %defattr(644,root,root,755)
 %doc *.gz doc
 %attr(755,root,root) /usr/bin/*
-%attr(755,root,root) /usr/lib/lib*so
-/usr/include/*
 /usr/share/info/*.info*
 /usr/share/man/man1/*
 /usr/share/libplot
 /usr/share/ode
 /usr/share/tek2plot
+
+#####################################
+%files libplot
+%defattr(644,root,root,755)
+%attr(755,root,root) /usr/lib/lib*.so.*.*
+
+#####################################
+%files libplot-devel
+%defattr(644,root,root,755)
+%attr(755,root,root) /usr/lib/lib*.so
+%doc libplot/README*.gz
+/usr/include/*
+
+#####################################
+%files libplot-static
+%defattr(644,root,root,755)
+%attr(755,root,root) /usr/lib/lib*.a
     
+
 %changelog
+* Sat May 15 1999 Rafa³ Kleger-Rudomin <klakier@pg.gda.pl>
+- Added plotutils-libplot, -devel, -static 
 * Fri May 14 1999 Rafa³ Kleger-Rudomin <klakier@pg.gda.pl>
 - Initial version for PLD.
