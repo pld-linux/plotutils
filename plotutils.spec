@@ -4,7 +4,7 @@ Summary:	GNU Plotutils -- plotting utilities
 Summary(pl):	Narzêdzia do wykresów
 Name:		plotutils
 Version:	2.2
-Release:	1
+Release:	2
 Copyright:	GPL
 Group:		Applications/Graphics
 Group(pl):	Aplikacje/Grafika
@@ -99,10 +99,9 @@ rm -rf $RPM_BUILD_ROOT
 /sbin/ldconfig
 /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%preun
+%postun 
+/sbin/ldconfig
 /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
-
-%postun -p /sbin/ldconfig
 
 #######################################
 %files
