@@ -1,0 +1,56 @@
+--- plotutils-2.4.1/info/plotutils.texi	Mon Jul  3 07:09:05 2000
++++ plotutils-2.4.1.new/info/plotutils.texi	Wed Feb 14 04:24:31 2001
+@@ -6,18 +6,18 @@
+ @c @setchapternewpage odd
+ @c %**end of header
+ 
+-@dircategory GNU Plotting Utilities
++@dircategory Scientific software:
+ @direntry
+-* Plotting utilities: (plotutils).      GNU plotting utilities.
+-* graph: (plotutils)graph Invocation.   Plot datasets, possibly in real time.
+-* plot: (plotutils)plot Invocation.     Convert and display plot files.
+-* pic2plot: (plotutils)pic2plot Invocation.   Convert files in the pic language
+-* tek2plot: (plotutils)tek2plot Invocation.   Translate legacy Tektronix data.
+-* plotfont: (plotutils)plotfont Invocation.   Plot character maps of fonts.
+-* spline: (plotutils)spline Invocation. Interpolate between points in datasets.
+-* ode: (plotutils)ode Invocation.       Integrate differential equations.
+-* libplot: (plotutils)libplot.          A library for 2-D vector graphics.
+-* Appendices: (plotutils)Appendices.    More info on the plotting utilities.
++* Plotting utilities: (plotutils).	GNU plotting utilities
++* graph: (plotutils)graph.		Plot datasets, possibly in real time
++* plot: (plotutils)plot.		Convert and display plot files
++* pic2plot: (plotutils)pic2plot.	Convert files in the pic language
++* tek2plot: (plotutils)tek2plot.	Translate legacy Tektronix data
++* plotfont: (plotutils)plotfont.	Plot character maps of fonts
++* spline: (plotutils)spline.		Interpolate between points in datasets
++* ode: (plotutils)ode.			Integrate differential equations
++* libplot: (plotutils)libplot.		A library for 2-D vector graphics
++* Appendices: (plotutils)Appendices.	More info on the plotting utilities
+ @end direntry
+ 
+ @iftex
+@@ -8354,7 +8354,7 @@
+ @w{A language} binding may also include functions for creating,
+ selecting, and deleting Plotters.  For example, the @w{C binding}
+ includes the additional functions @code{pl_newpl_r} and
+-@code{pl_deletepl_r}.  @xref{The C API}@.
++@code{pl_deletepl_r}.  @xref{The C API}.
+ 
+ The 97 functions that operate on a specified Plotter are divided into
+ the four sets tabulated below.
+--- plotutils-2.4.1/libxmi/info/libxmi.texi	Sun Nov 21 21:46:24 1999
++++ plotutils-2.4.1.new/libxmi/info/libxmi.texi	Wed Feb 14 04:35:10 2001
+@@ -6,9 +6,10 @@
+ @c @setchapternewpage odd
+ @c %**end of header
+ 
+-@dircategory Libraries
++@dircategory Libraries:
+ @direntry
+-* Libxmi: (libxmi).           The GNU libxmi 2-D rasterization library.
++* Libxmi: (libxmi).			The GNU libxmi 2-D
++					rasterization library
+ @end direntry
+ 
+ @ifinfo
