@@ -84,7 +84,7 @@ rm -rf $RPM_BUILD_ROOT
 make install \
 	prefix=$RPM_BUILD_ROOT/usr
 
-strip --strip-unneeded $RPM_BUILD_ROOT/usr/lib/lib*.so
+strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so
 
 gzip -9nf $RPM_BUILD_ROOT/usr/share/{info/*.info*,man/man1/*} \
 	AUTHORS COMPAT COPYING KNOWN_BUGS NEWS ONEWS README ChangeLog \
@@ -119,19 +119,19 @@ fi
 #####################################
 %files libplot
 %defattr(644,root,root,755)
-%attr(755,root,root) /usr/lib/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 #####################################
 %files libplot-devel
 %defattr(644,root,root,755)
-%attr(755,root,root) /usr/lib/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.so
 %doc libplot/README*.gz
 /usr/include/*
 
 #####################################
 %files libplot-static
 %defattr(644,root,root,755)
-%attr(755,root,root) /usr/lib/lib*.a
+%attr(755,root,root) %{_libdir}/lib*.a
     
 
 %changelog
