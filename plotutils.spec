@@ -5,7 +5,7 @@ Summary:	GNU Plotutils -- plotting utilities
 Summary(pl):	Narzêdzia do wykresów
 Name:		plotutils
 Version:	2.4.1
-Release:	5
+Release:	6
 License:	GPL
 Group:		Applications/Graphics
 Source0:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.gz
@@ -193,11 +193,8 @@ Biblioteka statyczna libxmi.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-if [ -f %{_pkgconfigdir}/libpng12.pc ] ; then
-	CPPFLAGS="`pkg-config libpng12 --cflags`"
-fi
 CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
-%configure CPPFLAGS="$CPPFLAGS" \
+%configure \
 	--enable-libplotter \
 	--enable-libxmi
 %{__make}
@@ -212,11 +209,7 @@ install -d $RPM_BUILD_ROOT{%{_examplesdir}/libplot-%{LIBPLOT_VERSION},%{_fontsdi
 install doc/h-demo.c $RPM_BUILD_ROOT%{_examplesdir}/libplot-%{LIBPLOT_VERSION}
 install fonts/pcf/*.pcf $RPM_BUILD_ROOT%{_fontsdir}/misc
 
-gzip -9nf $RPM_BUILD_ROOT%{_fontsdir}/misc/* \
-	AUTHORS COMPAT KNOWN_BUGS NEWS ONEWS PROBLEMS README THANKS TODO \
-	doc/{demo-page,*.doc,*.txt,*.bib} \
-	libplot/{DEDICATION,HUMOR,README*,VERSION} \
-	libxmi/{AUTHORS,NEWS,README*,TODO,VERSION}
+gzip -9nf $RPM_BUILD_ROOT%{_fontsdir}/misc/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -249,7 +242,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS COMPAT KNOWN_BUGS NEWS ONEWS PROBLEMS README THANKS TODO
 %attr(755,root,root) %{_bindir}/*
 %{_infodir}/plotutils.info*
 %{_mandir}/man1/*
@@ -259,7 +252,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n libplot
 %defattr(644,root,root,755)
-%doc doc/*.gz
+%doc doc/{demo-page,*.doc,*.txt,*.bib}
+%doc libplot/{DEDICATION,HUMOR,README*,VERSION}
 %attr(755,root,root) %{_libdir}/libplot.so.*.*
 %{_fontsdir}/misc/*
 
@@ -267,7 +261,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libplot.so
 %attr(755,root,root) %{_libdir}/libplot.la
-%doc libplot/*.gz
 %{_examplesdir}/libplot-%{LIBPLOT_VERSION}
 %{_includedir}/plot.h
 %{_includedir}/plotcompat.h
@@ -292,7 +285,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n libxmi
 %defattr(644,root,root,755)
-%doc libxmi/*.gz
+%doc libxmi/{AUTHORS,NEWS,README*,TODO,VERSION}
 %attr(755,root,root) %{_libdir}/libxmi.so.*.*
 
 %files -n libxmi-devel
