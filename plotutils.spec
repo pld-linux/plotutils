@@ -96,11 +96,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
-/sbin/install-info /usr/share/info/%{name}.info.gz /etc/info-dir
+/sbin/install-info %{_infodir}/%{name}.info.gz /etc/info-dir
 
 %preun
 if [ "$1" = "0" ]; then
-	/sbin/install-info --delete /usr/share/info/%{name}.info.gz /etc/info-dir
+	/sbin/install-info --delete %{_infodir}/%{name}.info.gz /etc/info-dir
 fi
 
 %postun -p /sbin/ldconfig
@@ -110,8 +110,8 @@ fi
 %defattr(644,root,root,755)
 %doc *.gz doc
 %attr(755,root,root) /usr/bin/*
-/usr/share/info/*.info*
-/usr/share/man/man1/*
+%{_infodir}/*.info*
+%{_mandir}/man1/*
 /usr/share/libplot
 /usr/share/ode
 /usr/share/tek2plot
