@@ -16,9 +16,26 @@ BuildRequires:	libstdc++
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-GNU plotutils (plotting utilities) package, graphics under the X
-Window System. The Web page for the package is:
-http://www.gnu.org/software/plotutils/plotutils.html
+The GNU plotting utilities include: (1) GNU libplot, a shared library
+for exporting 2-D vector graphics files and for performing vector
+graphics animation under the X Window System. Its output file formats
+include pseudo-GIF, PNM, Adobe Illustrator, Postscript (editable with
+the free 'idraw' drawing editor), Fig (editable with the free g'
+drawing editor), PCL 5, HP-GL and HP-GL/2, Tektronix, and GNU metafile
+format. Many Postscript, PCL, and Hershey fonts are supported. A
+separate class library, 'libplotter', provides a C++ binding to
+libplot's functionality. (2) Sample command-line applications 'graph',
+'plot', 'tek2plot', 'pic2plot', and 'plotfont', which are built on top
+of GNU libplot. 'graph' is a powerful utility for XY plotting, 'plot'
+translates GNU metafiles to other formats, 'tek2plot' translates
+legacy Tektronix data, 'pic2plot' translates box-and-arrow diagrams in
+the pic language, and 'plotfont' plots character maps. (3)
+Command-line applications 'spline', 'double', and e', which are useful
+in scientific plotting. 'spline' does spline interpolation of input
+data of arbitrary dimensionality. It uses cubic splines, splines under
+tension, or cubic Bessel interpolation. e' is an interactive program
+that can integrate a user-specified system of ordinary differential
+equations.
 
 %description -l pl
 GNU Plotutils to pakiet zawieraj±cy narzêdzia do tworzenia wykresów.
@@ -178,10 +195,11 @@ biblioteka statyczna libxmi
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_examplesdir}/libplot-%{LIBPLOT_VERSION},/usr/share/fonts/misc}
+install -d $RPM_BUILD_ROOT{%{_examplesdir}/libplot-%{LIBPLOT_VERSION}}
 install doc/h-demo.c $RPM_BUILD_ROOT%{_examplesdir}/libplot-%{LIBPLOT_VERSION}
 install fonts/pcf/*.pcf $RPM_BUILD_ROOT/usr/share/fonts/misc
-gzip $RPM_BUILD_ROOT/usr/share/fonts/misc/*
+
+gzip -9nf $RPM_BUILD_ROOT/usr/share/fonts/misc/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -192,23 +210,14 @@ rm -rf $RPM_BUILD_ROOT
 %postun 
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%post -n libplot
-/sbin/ldconfig
+%post   -n libplot -p /sbin/ldconfig
+%postun -n libplot -p /sbin/ldconfig
 
-%postun -n libplot
-/sbin/ldconfig
+%post   -n libplotter -p /sbin/ldconfig
+%postun -n libplotter -p /sbin/ldconfig
 
-%post -n libplotter
-/sbin/ldconfig
-
-%postun -n libplotter
-/sbin/ldconfig
-
-%post -n libxmi
-/sbin/ldconfig
-
-%postun -n libxmi
-/sbin/ldconfig
+%post   -n libxmi -p /sbin/ldconfig
+%postun -n libxmi -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
