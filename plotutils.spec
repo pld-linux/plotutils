@@ -61,7 +61,7 @@ Version:	%{LIBPLOT_VERSION}
 GNU libplot: a function library for exporting two-dimensional vector
 graphics files, and for displaying animated vector.
 
-%description -l pl -n libplot
+%description -n libplot -l pl
 GNU libplot: biblioteka do tworzenia dwuwymiarowej grafiki wektorowej
 lub wy¶wietlania animowanych obrazów wektorowych pod X Window.
 
@@ -75,7 +75,7 @@ Version:	%{LIBPLOT_VERSION}
 %description -n libplot-devel
 libplot header files.
 
-%description -l pl -n libplot-devel
+%description -n libplot-devel -l pl
 Pliki nag³ówkowe dla libplot.
 
 %package -n libplot-static
@@ -88,7 +88,7 @@ Version:	%{LIBPLOT_VERSION}
 %description -n libplot-static
 libplot static libraries.
 
-%description -l pl -n libplot-static
+%description -n libplot-static -l pl
 Biblioteka statyczna libplot.
 
 %package -n libplotter
@@ -101,7 +101,7 @@ Version:	%{LIBPLOT_VERSION}
 GNU libplotter: a function library for exporting two-dimensional
 vector graphics files, and for displaying animated vector.
 
-%description -l pl -n libplotter
+%description -n libplotter -l pl
 GNU libplotter: biblioteka do tworzenia dwuwymiarowej grafiki
 wektorowej lub wy¶wietlania animowanych obrazów wektorowych pod X
 Window.
@@ -116,7 +116,7 @@ Version:	%{LIBPLOT_VERSION}
 %description -n libplotter-devel
 libplotter header files.
 
-%description -l pl -n libplotter-devel
+%description -n libplotter-devel -l pl
 Pliki nag³ówkowe dla libplotter.
 
 %package -n libplotter-static
@@ -129,7 +129,7 @@ Version:	%{LIBPLOT_VERSION}
 %description -n libplotter-static
 libplotter static libraries.
 
-%description -l pl -n libplotter-static
+%description -n libplotter-static -l pl
 Biblioteka statyczna libplotter.
 
 %package -n libxmi
@@ -142,7 +142,7 @@ Version:	%{LIBXMI_VERSION}
 GNU libxmi: a function library for exporting two-dimensional vector
 graphics files, and for displaying animated vector.
 
-%description -l pl -n libxmi
+%description -n libxmi -l pl
 GNU libxmi: biblioteka do tworzenia dwuwymiarowej grafiki wektorowej
 lub wy¶wietlania animowanych obrazów wektorowych pod X Window.
 
@@ -156,7 +156,7 @@ Version:	%{LIBXMI_VERSION}
 %description -n libxmi-devel
 libxmi header files.
 
-%description -l pl -n libxmi-devel
+%description -n libxmi-devel -l pl
 Pliki nag³ówkowe dla libxmi.
 
 %package -n libxmi-static
@@ -169,7 +169,7 @@ Version:	%{LIBXMI_VERSION}
 %description -n libxmi-static
 libxmi static libraries.
 
-%description -l pl -n libxmi-static
+%description -n libxmi-static -l pl
 Biblioteka statyczna libxmi.
 
 %prep
@@ -210,7 +210,7 @@ rm -rf $RPM_BUILD_ROOT
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%postun 
+%postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %post -n libxmi-devel
@@ -261,7 +261,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n libplot-static
 %defattr(644,root,root,755)
 %{_libdir}/libplot.a
- 
+
 %files -n libplotter
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libplotter.so.*.*
@@ -291,4 +291,3 @@ rm -rf $RPM_BUILD_ROOT
 %files -n libxmi-static
 %defattr(644,root,root,755)
 %{_libdir}/libxmi.a
-    
