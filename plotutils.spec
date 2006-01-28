@@ -8,7 +8,7 @@ Version:	2.4.1
 Release:	8
 License:	GPL
 Group:		Applications/Graphics
-Source0:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnu.org/gnu/plotutils/%{name}-%{version}.tar.gz
 # Source0-md5:	8da2cc2ed5a837cad0753c7843ef18ee
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-c++.patch
@@ -21,7 +21,7 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libtool
 BuildRequires:	texinfo
-Requires:	libplot
+Requires:	libplot = %{LIBPLOT_VERSION}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -82,7 +82,7 @@ Summary:	libplot header files
 Summary(pl):	Pliki nag³ówkowe dla libplot
 Version:	%{LIBPLOT_VERSION}
 Group:		Development/Libraries
-Requires:	libplot = %{LIBPLOT_VERSION}
+Requires:	libplot = %{LIBPLOT_VERSION}-%{release}
 Requires:	XFree86-devel
 Requires:	libpng-devel
 
@@ -97,7 +97,7 @@ Summary:	libplot static library
 Summary(pl):	Biblioteka statyczna libplot
 Version:	%{LIBPLOT_VERSION}
 Group:		Development/Libraries
-Requires:	libplot-devel = %{LIBPLOT_VERSION}
+Requires:	libplot-devel = %{LIBPLOT_VERSION}-%{release}
 
 %description -n libplot-static
 libplot static library.
@@ -125,7 +125,7 @@ Summary:	libplotter header files
 Summary(pl):	Pliki nag³ówkowe dla libplotter
 Version:	%{LIBPLOT_VERSION}
 Group:		Development/Libraries
-Requires:	libplotter = %{LIBPLOT_VERSION}
+Requires:	libplotter = %{LIBPLOT_VERSION}-%{release}
 Requires:	XFree86-devel
 Requires:	libpng-devel
 Requires:	libstdc++-devel
@@ -141,7 +141,7 @@ Summary:	libplotter static library
 Summary(pl):	Biblioteka statyczna libplotter
 Version:	%{LIBPLOT_VERSION}
 Group:		Development/Libraries
-Requires:	libplotter-devel = %{LIBPLOT_VERSION}
+Requires:	libplotter-devel = %{LIBPLOT_VERSION}-%{release}
 
 %description -n libplotter-static
 libplotter static library.
@@ -168,7 +168,7 @@ Summary:	libxmi header files
 Summary(pl):	Pliki nag³ówkowe dla libxmi
 Version:	%{LIBXMI_VERSION}
 Group:		Development/Libraries
-Requires:	libxmi = %{LIBXMI_VERSION}
+Requires:	libxmi = %{LIBXMI_VERSION}-%{release}
 
 %description -n libxmi-devel
 libxmi header files.
@@ -181,7 +181,7 @@ Summary:	Libxmi static library
 Summary(pl):	Biblioteka statyczna libxmi
 Version:	%{LIBXMI_VERSION}
 Group:		Development/Libraries
-Requires:	libxmi-devel = %{LIBXMI_VERSION}
+Requires:	libxmi-devel = %{LIBXMI_VERSION}-%{release}
 
 %description -n libxmi-static
 libxmi static library.
