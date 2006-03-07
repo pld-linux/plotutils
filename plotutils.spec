@@ -67,7 +67,7 @@ interaktywnym programem do rozwi±zywania uk³adów równañ ró¿niczkowych.
 Summary:	libplot plotting library - from plotutils package
 Summary(pl):	libplot -- Biblioteka do kre¶lenia z pakietu plotutils
 Version:	%{LIBPLOT_VERSION}
-Group:		Development/Libraries
+Group:		Libraries
 
 %description -n libplot
 GNU libplot: a function library for exporting two-dimensional vector
@@ -109,7 +109,7 @@ Biblioteka statyczna libplot.
 Summary:	libplotter plotting library - from plotutils package
 Summary(pl):	libplotter - biblioteka do kre¶lenia z pakietu plotutils
 Version:	%{LIBPLOT_VERSION}
-Group:		Development/Libraries
+Group:		Libraries
 
 %description -n libplotter
 GNU libplotter: a function library for exporting two-dimensional
@@ -153,7 +153,7 @@ Biblioteka statyczna libplotter.
 Summary:	libxmi library - from plotutils package
 Summary(pl):	libxmi - biblioteka z pakietu plotutils
 Version:	%{LIBXMI_VERSION}
-Group:		Development/Libraries
+Group:		Libraries
 
 %description -n libxmi
 GNU libxmi: a function library for exporting two-dimensional vector
