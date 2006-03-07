@@ -5,7 +5,7 @@ Summary:	GNU Plotutils -- plotting utilities
 Summary(pl):	Narzêdzia do wykresów
 Name:		plotutils
 Version:	2.4.1
-Release:	8
+Release:	9
 License:	GPL
 Group:		Applications/Graphics
 Source0:	ftp://ftp.gnu.org/gnu/plotutils/%{name}-%{version}.tar.gz
@@ -13,7 +13,6 @@ Source0:	ftp://ftp.gnu.org/gnu/plotutils/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-c++.patch
 URL:		http://www.gnu.org/software/plotutils/plotutils.html
-BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	flex
@@ -21,6 +20,8 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libtool
 BuildRequires:	texinfo
+BuildRequires:	xorg-lib-libXaw-devel
+BuildRequires:	xorg-lib-libXext-devel
 Requires:	libplot = %{LIBPLOT_VERSION}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -83,8 +84,9 @@ Summary(pl):	Pliki nag³ówkowe dla libplot
 Version:	%{LIBPLOT_VERSION}
 Group:		Development/Libraries
 Requires:	libplot = %{LIBPLOT_VERSION}-%{release}
-Requires:	XFree86-devel
 Requires:	libpng-devel
+Requires:	xorg-lib-libXaw-devel
+Requires:	xorg-lib-libXext-devel
 
 %description -n libplot-devel
 libplot header files.
@@ -126,9 +128,10 @@ Summary(pl):	Pliki nag³ówkowe dla libplotter
 Version:	%{LIBPLOT_VERSION}
 Group:		Development/Libraries
 Requires:	libplotter = %{LIBPLOT_VERSION}-%{release}
-Requires:	XFree86-devel
 Requires:	libpng-devel
 Requires:	libstdc++-devel
+Requires:	xorg-lib-libXaw-devel
+Requires:	xorg-lib-libXext-devel
 
 %description -n libplotter-devel
 libplotter header files.
@@ -198,6 +201,7 @@ Biblioteka statyczna libxmi.
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
 %configure \
