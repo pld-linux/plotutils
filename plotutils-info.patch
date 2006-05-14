@@ -30,15 +30,6 @@
  @end direntry
  
  @iftex
-@@ -8354,7 +8354,7 @@
- @w{A language} binding may also include functions for creating,
- selecting, and deleting Plotters.  For example, the @w{C binding}
- includes the additional functions @code{pl_newpl_r} and
--@code{pl_deletepl_r}.  @xref{The C API}@.
-+@code{pl_deletepl_r}.  @xref{The C API}.
- 
- The 97 functions that operate on a specified Plotter are divided into
- the four sets tabulated below.
 --- plotutils-2.4.1/libxmi/info/libxmi.texi	Sun Nov 21 21:46:24 1999
 +++ plotutils-2.4.1.new/libxmi/info/libxmi.texi	Wed Feb 14 04:35:10 2001
 @@ -6,9 +6,10 @@
