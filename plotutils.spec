@@ -2,7 +2,7 @@
 %define	LIBXMI_VERSION 1.3
 
 Summary:	GNU Plotutils -- plotting utilities
-Summary(pl):	NarzÍdzia do wykresÛw
+Summary(pl.UTF-8):   Narzƒôdzia do wykres√≥w
 Name:		plotutils
 Version:	2.5
 Release:	1
@@ -46,26 +46,26 @@ under tension, or cubic Bessel interpolation. 'ode' is an interactive
 program that can integrate a user-specified system of ordinary
 differential equations.
 
-%description -l pl
-GNU Plotutils to pakiet zawieraj±cy narzÍdzia do tworzenia wykresÛw.
-Sk≥ada siÍ z biblioteki GNU libplot, przyk≥adowych programÛw
-dzia≥aj±cych z linii poleceÒ oraz aplikacji. GNU libplot to biblioteka
-do tworzenia plikÛw z grafik± wektorow± 2D i odtwarzania animowanej
-grafiki wektorowej w ∂rodowisku X Window System. libplot potrafi
-zapisywaÊ w formatach m.in. GIF, PNM, Adobe Illustrator, Postscript,
-Fig, PCL 5, HP-GL i GP-GL/2, Tektronix i GNU metafile. Obs≥uguje wiele
-fontÛw Postscriptowych, PCL i Hershey. Oddzielna biblioteka libplotter
-daje interfejs C++ do funkcji libplot. Programy przyk≥adowe to graph,
-plot, tek2plot, pic2plot i plotfont; pierwszy s≥uøy do rysowania, trzy
-kolejne do konwersji miÍdzy rÛønymi formatami, ostatni do wy∂wietlania
-fontÛw. Aplikacje zawarte w pakiecie plotutils to spline, double oraz
-ode, przydatne do rysunkÛw naukowych. spline tworzy interpolacjÍ
-splajnami dostarczonych danych o dowolnej liczbie wymiarÛw. ode jest
-interaktywnym programem do rozwi±zywania uk≥adÛw rÛwnaÒ rÛøniczkowych.
+%description -l pl.UTF-8
+GNU Plotutils to pakiet zawierajƒÖcy narzƒôdzia do tworzenia wykres√≥w.
+Sk≈Çada siƒô z biblioteki GNU libplot, przyk≈Çadowych program√≥w
+dzia≈ÇajƒÖcych z linii polece≈Ñ oraz aplikacji. GNU libplot to biblioteka
+do tworzenia plik√≥w z grafikƒÖ wektorowƒÖ 2D i odtwarzania animowanej
+grafiki wektorowej w ≈õrodowisku X Window System. libplot potrafi
+zapisywaƒá w formatach m.in. GIF, PNM, Adobe Illustrator, Postscript,
+Fig, PCL 5, HP-GL i GP-GL/2, Tektronix i GNU metafile. Obs≈Çuguje wiele
+font√≥w Postscriptowych, PCL i Hershey. Oddzielna biblioteka libplotter
+daje interfejs C++ do funkcji libplot. Programy przyk≈Çadowe to graph,
+plot, tek2plot, pic2plot i plotfont; pierwszy s≈Çu≈ºy do rysowania, trzy
+kolejne do konwersji miƒôdzy r√≥≈ºnymi formatami, ostatni do wy≈õwietlania
+font√≥w. Aplikacje zawarte w pakiecie plotutils to spline, double oraz
+ode, przydatne do rysunk√≥w naukowych. spline tworzy interpolacjƒô
+splajnami dostarczonych danych o dowolnej liczbie wymiar√≥w. ode jest
+interaktywnym programem do rozwiƒÖzywania uk≈Çad√≥w r√≥wna≈Ñ r√≥≈ºniczkowych.
 
 %package -n libplot
 Summary:	libplot plotting library - from plotutils package
-Summary(pl):	libplot -- Biblioteka do kre∂lenia z pakietu plotutils
+Summary(pl.UTF-8):   libplot -- Biblioteka do kre≈õlenia z pakietu plotutils
 Version:	%{LIBPLOT_VERSION}
 Group:		Libraries
 
@@ -73,13 +73,13 @@ Group:		Libraries
 GNU libplot: a function library for exporting two-dimensional vector
 graphics files, and for displaying animated vector.
 
-%description -n libplot -l pl
+%description -n libplot -l pl.UTF-8
 GNU libplot: biblioteka do tworzenia dwuwymiarowej grafiki wektorowej
-lub wy∂wietlania animowanych obrazÛw wektorowych pod X Window.
+lub wy≈õwietlania animowanych obraz√≥w wektorowych pod X Window.
 
 %package -n libplot-devel
 Summary:	libplot header files
-Summary(pl):	Pliki nag≥Ûwkowe dla libplot
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe dla libplot
 Version:	%{LIBPLOT_VERSION}
 Group:		Development/Libraries
 Requires:	libplot = %{LIBPLOT_VERSION}-%{release}
@@ -90,12 +90,12 @@ Requires:	xorg-lib-libXext-devel
 %description -n libplot-devel
 libplot header files.
 
-%description -n libplot-devel -l pl
-Pliki nag≥Ûwkowe dla libplot.
+%description -n libplot-devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe dla libplot.
 
 %package -n libplot-static
 Summary:	libplot static library
-Summary(pl):	Biblioteka statyczna libplot
+Summary(pl.UTF-8):   Biblioteka statyczna libplot
 Version:	%{LIBPLOT_VERSION}
 Group:		Development/Libraries
 Requires:	libplot-devel = %{LIBPLOT_VERSION}-%{release}
@@ -103,12 +103,12 @@ Requires:	libplot-devel = %{LIBPLOT_VERSION}-%{release}
 %description -n libplot-static
 libplot static library.
 
-%description -n libplot-static -l pl
+%description -n libplot-static -l pl.UTF-8
 Biblioteka statyczna libplot.
 
 %package -n libplotter
 Summary:	libplotter plotting library - from plotutils package
-Summary(pl):	libplotter - biblioteka do kre∂lenia z pakietu plotutils
+Summary(pl.UTF-8):   libplotter - biblioteka do kre≈õlenia z pakietu plotutils
 Version:	%{LIBPLOT_VERSION}
 Group:		Libraries
 
@@ -116,14 +116,14 @@ Group:		Libraries
 GNU libplotter: a function library for exporting two-dimensional
 vector graphics files, and for displaying animated vector.
 
-%description -n libplotter -l pl
+%description -n libplotter -l pl.UTF-8
 GNU libplotter: biblioteka do tworzenia dwuwymiarowej grafiki
-wektorowej lub wy∂wietlania animowanych obrazÛw wektorowych pod X
+wektorowej lub wy≈õwietlania animowanych obraz√≥w wektorowych pod X
 Window.
 
 %package -n libplotter-devel
 Summary:	libplotter header files
-Summary(pl):	Pliki nag≥Ûwkowe dla libplotter
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe dla libplotter
 Version:	%{LIBPLOT_VERSION}
 Group:		Development/Libraries
 Requires:	libplotter = %{LIBPLOT_VERSION}-%{release}
@@ -135,12 +135,12 @@ Requires:	xorg-lib-libXext-devel
 %description -n libplotter-devel
 libplotter header files.
 
-%description -n libplotter-devel -l pl
-Pliki nag≥Ûwkowe dla libplotter.
+%description -n libplotter-devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe dla libplotter.
 
 %package -n libplotter-static
 Summary:	libplotter static library
-Summary(pl):	Biblioteka statyczna libplotter
+Summary(pl.UTF-8):   Biblioteka statyczna libplotter
 Version:	%{LIBPLOT_VERSION}
 Group:		Development/Libraries
 Requires:	libplotter-devel = %{LIBPLOT_VERSION}-%{release}
@@ -148,12 +148,12 @@ Requires:	libplotter-devel = %{LIBPLOT_VERSION}-%{release}
 %description -n libplotter-static
 libplotter static library.
 
-%description -n libplotter-static -l pl
+%description -n libplotter-static -l pl.UTF-8
 Biblioteka statyczna libplotter.
 
 %package -n libxmi
 Summary:	libxmi library - from plotutils package
-Summary(pl):	libxmi - biblioteka z pakietu plotutils
+Summary(pl.UTF-8):   libxmi - biblioteka z pakietu plotutils
 Version:	%{LIBXMI_VERSION}
 Group:		Libraries
 
@@ -161,13 +161,13 @@ Group:		Libraries
 GNU libxmi: a function library for exporting two-dimensional vector
 graphics files, and for displaying animated vector.
 
-%description -n libxmi -l pl
+%description -n libxmi -l pl.UTF-8
 GNU libxmi: biblioteka do tworzenia dwuwymiarowej grafiki wektorowej
-lub wy∂wietlania animowanych obrazÛw wektorowych pod X Window.
+lub wy≈õwietlania animowanych obraz√≥w wektorowych pod X Window.
 
 %package -n libxmi-devel
 Summary:	libxmi header files
-Summary(pl):	Pliki nag≥Ûwkowe dla libxmi
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe dla libxmi
 Version:	%{LIBXMI_VERSION}
 Group:		Development/Libraries
 Requires:	libxmi = %{LIBXMI_VERSION}-%{release}
@@ -175,12 +175,12 @@ Requires:	libxmi = %{LIBXMI_VERSION}-%{release}
 %description -n libxmi-devel
 libxmi header files.
 
-%description -n libxmi-devel -l pl
-Pliki nag≥Ûwkowe dla libxmi.
+%description -n libxmi-devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe dla libxmi.
 
 %package -n libxmi-static
 Summary:	Libxmi static library
-Summary(pl):	Biblioteka statyczna libxmi
+Summary(pl.UTF-8):   Biblioteka statyczna libxmi
 Version:	%{LIBXMI_VERSION}
 Group:		Development/Libraries
 Requires:	libxmi-devel = %{LIBXMI_VERSION}-%{release}
@@ -188,7 +188,7 @@ Requires:	libxmi-devel = %{LIBXMI_VERSION}-%{release}
 %description -n libxmi-static
 libxmi static library.
 
-%description -n libxmi-static -l pl
+%description -n libxmi-static -l pl.UTF-8
 Biblioteka statyczna libxmi.
 
 %prep
