@@ -2,7 +2,7 @@
 %define	LIBXMI_VERSION 1.3
 
 Summary:	GNU Plotutils -- plotting utilities
-Summary(pl.UTF-8):   Narzędzia do wykresów
+Summary(pl.UTF-8):	Narzędzia do wykresów
 Name:		plotutils
 Version:	2.5
 Release:	1
@@ -65,7 +65,7 @@ interaktywnym programem do rozwiązywania układów równań różniczkowych.
 
 %package -n libplot
 Summary:	libplot plotting library - from plotutils package
-Summary(pl.UTF-8):   libplot -- Biblioteka do kreślenia z pakietu plotutils
+Summary(pl.UTF-8):	libplot -- Biblioteka do kreślenia z pakietu plotutils
 Version:	%{LIBPLOT_VERSION}
 Group:		Libraries
 
@@ -79,7 +79,7 @@ lub wyświetlania animowanych obrazów wektorowych pod X Window.
 
 %package -n libplot-devel
 Summary:	libplot header files
-Summary(pl.UTF-8):   Pliki nagłówkowe dla libplot
+Summary(pl.UTF-8):	Pliki nagłówkowe dla libplot
 Version:	%{LIBPLOT_VERSION}
 Group:		Development/Libraries
 Requires:	libplot = %{LIBPLOT_VERSION}-%{release}
@@ -95,7 +95,7 @@ Pliki nagłówkowe dla libplot.
 
 %package -n libplot-static
 Summary:	libplot static library
-Summary(pl.UTF-8):   Biblioteka statyczna libplot
+Summary(pl.UTF-8):	Biblioteka statyczna libplot
 Version:	%{LIBPLOT_VERSION}
 Group:		Development/Libraries
 Requires:	libplot-devel = %{LIBPLOT_VERSION}-%{release}
@@ -108,7 +108,7 @@ Biblioteka statyczna libplot.
 
 %package -n libplotter
 Summary:	libplotter plotting library - from plotutils package
-Summary(pl.UTF-8):   libplotter - biblioteka do kreślenia z pakietu plotutils
+Summary(pl.UTF-8):	libplotter - biblioteka do kreślenia z pakietu plotutils
 Version:	%{LIBPLOT_VERSION}
 Group:		Libraries
 
@@ -123,7 +123,7 @@ Window.
 
 %package -n libplotter-devel
 Summary:	libplotter header files
-Summary(pl.UTF-8):   Pliki nagłówkowe dla libplotter
+Summary(pl.UTF-8):	Pliki nagłówkowe dla libplotter
 Version:	%{LIBPLOT_VERSION}
 Group:		Development/Libraries
 Requires:	libplotter = %{LIBPLOT_VERSION}-%{release}
@@ -140,7 +140,7 @@ Pliki nagłówkowe dla libplotter.
 
 %package -n libplotter-static
 Summary:	libplotter static library
-Summary(pl.UTF-8):   Biblioteka statyczna libplotter
+Summary(pl.UTF-8):	Biblioteka statyczna libplotter
 Version:	%{LIBPLOT_VERSION}
 Group:		Development/Libraries
 Requires:	libplotter-devel = %{LIBPLOT_VERSION}-%{release}
@@ -153,7 +153,7 @@ Biblioteka statyczna libplotter.
 
 %package -n libxmi
 Summary:	libxmi library - from plotutils package
-Summary(pl.UTF-8):   libxmi - biblioteka z pakietu plotutils
+Summary(pl.UTF-8):	libxmi - biblioteka z pakietu plotutils
 Version:	%{LIBXMI_VERSION}
 Group:		Libraries
 
@@ -167,7 +167,7 @@ lub wyświetlania animowanych obrazów wektorowych pod X Window.
 
 %package -n libxmi-devel
 Summary:	libxmi header files
-Summary(pl.UTF-8):   Pliki nagłówkowe dla libxmi
+Summary(pl.UTF-8):	Pliki nagłówkowe dla libxmi
 Version:	%{LIBXMI_VERSION}
 Group:		Development/Libraries
 Requires:	libxmi = %{LIBXMI_VERSION}-%{release}
@@ -180,7 +180,7 @@ Pliki nagłówkowe dla libxmi.
 
 %package -n libxmi-static
 Summary:	Libxmi static library
-Summary(pl.UTF-8):   Biblioteka statyczna libxmi
+Summary(pl.UTF-8):	Biblioteka statyczna libxmi
 Version:	%{LIBXMI_VERSION}
 Group:		Development/Libraries
 Requires:	libxmi-devel = %{LIBXMI_VERSION}-%{release}
