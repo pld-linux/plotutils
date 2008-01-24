@@ -228,11 +228,11 @@ rm -rf $RPM_BUILD_ROOT
 %postun	-p	/sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%post	-n libxmi-devel
-[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+%post	-n libxmi-devel	-p	/sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-n libxmi-devel
-[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+%postun	-n libxmi-devel	-p	/sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
 
 %post	-n libplot
 /sbin/ldconfig
