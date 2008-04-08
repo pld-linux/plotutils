@@ -8,7 +8,7 @@ Version:	2.5
 Release:	2
 License:	GPL
 Group:		Applications/Graphics
-Source0:	ftp://ftp.gnu.org/gnu/plotutils/%{name}-%{version}.tar.gz
+Source0:	http://ftp.gnu.org/gnu/plotutils/%{name}-%{version}.tar.gz
 # Source0-md5:	0d6855cce17832afe2ff75c26a57be49
 Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/plotutils/plotutils.html
