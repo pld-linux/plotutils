@@ -1,16 +1,17 @@
-%define	LIBPLOT_VERSION 4.2
-%define	LIBXMI_VERSION 1.3
+%define	LIBPLOT_VERSION	4.3
+%define	LIBXMI_VERSION	1.3
 
 Summary:	GNU Plotutils -- plotting utilities
 Summary(pl.UTF-8):	Narzędzia do wykresów
 Name:		plotutils
-Version:	2.5
-Release:	2
-License:	GPL
+Version:	2.5.1
+Release:	3
+License:	GPL v3+
 Group:		Applications/Graphics
 Source0:	http://ftp.gnu.org/gnu/plotutils/%{name}-%{version}.tar.gz
-# Source0-md5:	0d6855cce17832afe2ff75c26a57be49
+# Source0-md5:	fad3bc273de4ca5d74462b908db658ce
 Patch0:		%{name}-info.patch
+Patch1:		%{name}-ac.patch
 URL:		http://www.gnu.org/software/plotutils/plotutils.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -68,6 +69,7 @@ Summary:	libplot plotting library - from plotutils package
 Summary(pl.UTF-8):	libplot -- Biblioteka do kreślenia z pakietu plotutils
 Version:	%{LIBPLOT_VERSION}
 Group:		Libraries
+Requires(post,postun):	fontpostinst
 
 %description -n libplot
 GNU libplot: a function library for exporting two-dimensional vector
@@ -194,6 +196,7 @@ Biblioteka statyczna libxmi.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
@@ -201,7 +204,6 @@ Biblioteka statyczna libxmi.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
 %configure \
 	--enable-libplotter \
 	--enable-libxmi
@@ -222,25 +224,25 @@ gzip -9nf $RPM_BUILD_ROOT%{_fontsdir}/misc/*
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
+%post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p	/sbin/postshell
+%postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%post	-n libxmi-devel	-p	/sbin/postshell
+%post	-n libxmi-devel	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-n libxmi-devel	-p	/sbin/postshell
+%postun	-n libxmi-devel	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %post	-n libplot
 /sbin/ldconfig
-[ ! -x /usr/X11R6/bin/mkfontdir ] || /usr/X11R6/bin/mkfontdir %{_fontsdir}/misc
+fontpostinst misc
 
 %postun	-n libplot
 /sbin/ldconfig
-[ ! -x /usr/X11R6/bin/mkfontdir ] || /usr/X11R6/bin/mkfontdir %{_fontsdir}/misc
+fontpostinst misc
 
 %post	-n libplotter -p /sbin/ldconfig
 %postun	-n libplotter -p /sbin/ldconfig
@@ -262,16 +264,17 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc doc/{demo-page,*.doc,*.txt,*.bib}
 %doc libplot/{DEDICATION,HUMOR,README*,VERSION}
-%attr(755,root,root) %{_libdir}/libplot.so.*.*
-%{_fontsdir}/misc/*
+%attr(755,root,root) %{_libdir}/libplot.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libplot.so.2
+%{_fontsdir}/misc/tekfont*.pcf.gz
 
 %files -n libplot-devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libplot.so
 %{_libdir}/libplot.la
-%{_examplesdir}/libplot-%{LIBPLOT_VERSION}
 %{_includedir}/plot.h
 %{_includedir}/plotcompat.h
+%{_examplesdir}/libplot-%{LIBPLOT_VERSION}
 
 %files -n libplot-static
 %defattr(644,root,root,755)
@@ -279,7 +282,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n libplotter
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libplotter.so.*.*
+%attr(755,root,root) %{_libdir}/libplotter.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libplotter.so.2
 
 %files -n libplotter-devel
 %defattr(644,root,root,755)
@@ -294,14 +298,15 @@ rm -rf $RPM_BUILD_ROOT
 %files -n libxmi
 %defattr(644,root,root,755)
 %doc libxmi/{AUTHORS,NEWS,README*,TODO,VERSION}
-%attr(755,root,root) %{_libdir}/libxmi.so.*.*
+%attr(755,root,root) %{_libdir}/libxmi.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxmi.so.0
 
 %files -n libxmi-devel
 %defattr(644,root,root,755)
-%{_infodir}/libxmi.info*
 %attr(755,root,root) %{_libdir}/libxmi.so
 %{_libdir}/libxmi.la
 %{_includedir}/xmi.h
+%{_infodir}/libxmi.info*
 
 %files -n libxmi-static
 %defattr(644,root,root,755)
