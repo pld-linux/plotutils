@@ -5,7 +5,7 @@ Summary:	GNU Plotutils -- plotting utilities
 Summary(pl.UTF-8):	Narzędzia do wykresów
 Name:		plotutils
 Version:	2.5.1
-Release:	3
+Release:	4
 License:	GPL v3+
 Group:		Applications/Graphics
 Source0:	http://ftp.gnu.org/gnu/plotutils/%{name}-%{version}.tar.gz
