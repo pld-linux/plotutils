@@ -4,12 +4,12 @@
 Summary:	GNU Plotutils -- plotting utilities
 Summary(pl.UTF-8):	Narzędzia do wykresów
 Name:		plotutils
-Version:	2.5.1
-Release:	4
+Version:	2.6
+Release:	1
 License:	GPL v3+
 Group:		Applications/Graphics
 Source0:	http://ftp.gnu.org/gnu/plotutils/%{name}-%{version}.tar.gz
-# Source0-md5:	fad3bc273de4ca5d74462b908db658ce
+# Source0-md5:	c08a424bd2438c80a786a7f4b5bb6a40
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-ac.patch
 URL:		http://www.gnu.org/software/plotutils/plotutils.html
@@ -216,7 +216,7 @@ install -d $RPM_BUILD_ROOT{%{_examplesdir}/libplot-%{LIBPLOT_VERSION},%{_fontsdi
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install doc/h-demo.c $RPM_BUILD_ROOT%{_examplesdir}/libplot-%{LIBPLOT_VERSION}
+#install doc/h-demo.c $RPM_BUILD_ROOT%{_examplesdir}/libplot-%{LIBPLOT_VERSION}
 install fonts/pcf/*.pcf $RPM_BUILD_ROOT%{_fontsdir}/misc
 
 gzip -9nf $RPM_BUILD_ROOT%{_fontsdir}/misc/*
@@ -262,7 +262,7 @@ fontpostinst misc
 
 %files -n libplot
 %defattr(644,root,root,755)
-%doc doc/{demo-page,*.doc,*.txt,*.bib}
+%doc doc/{*.txt,*.bib}
 %doc libplot/{DEDICATION,HUMOR,README*,VERSION}
 %attr(755,root,root) %{_libdir}/libplot.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libplot.so.2
