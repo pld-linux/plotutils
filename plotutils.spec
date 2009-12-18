@@ -6,7 +6,7 @@ Name:		plotutils
 Version:	2.6
 # Don't decrease release if LIBPLOT/LIBXMI versions are not increased, as then
 # those subpackages get then lower release
-Release:	5
+Release:	6
 License:	GPL v3+
 Group:		Applications/Graphics
 Source0:	http://ftp.gnu.org/gnu/plotutils/%{name}-%{version}.tar.gz
