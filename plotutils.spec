@@ -1,4 +1,4 @@
-%define		LIBPLOT_VERSION	4.3
+%define		LIBPLOT_VERSION	4.4
 %define		LIBXMI_VERSION	1.3
 Summary:	GNU Plotutils -- plotting utilities
 Summary(pl.UTF-8):	Narzędzia do wykresów
@@ -6,7 +6,7 @@ Name:		plotutils
 Version:	2.6
 # Don't decrease release if LIBPLOT/LIBXMI versions are not increased, as then
 # those subpackages get then lower release
-Release:	7
+Release:	8
 License:	GPL v3+
 Group:		Applications/Graphics
 Source0:	http://ftp.gnu.org/gnu/plotutils/%{name}-%{version}.tar.gz
