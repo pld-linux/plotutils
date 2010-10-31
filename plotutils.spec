@@ -254,9 +254,21 @@ fontpostinst misc
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS COMPAT KNOWN_BUGS NEWS ONEWS PROBLEMS README THANKS TODO
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/double
+%attr(755,root,root) %{_bindir}/graph
+%attr(755,root,root) %{_bindir}/hersheydemo
+%attr(755,root,root) %{_bindir}/ode
+%attr(755,root,root) %{_bindir}/pic2plot
+%attr(755,root,root) %{_bindir}/plot
+%attr(755,root,root) %{_bindir}/plotfont
+%attr(755,root,root) %{_bindir}/spline
+%attr(755,root,root) %{_bindir}/tek2plot
 %{_infodir}/plotutils.info*
-%{_mandir}/man1/*
+%{_mandir}/man1/ode.1*
+%{_mandir}/man1/plot.1*
+%{_mandir}/man1/plotfont.1*
+%{_mandir}/man1/spline.1*
+%{_mandir}/man1/tek2plot.1*
 %{_datadir}/ode
 %{_datadir}/pic2plot
 %{_datadir}/tek2plot
