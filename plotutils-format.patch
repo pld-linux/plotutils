@@ -1,0 +1,11 @@
+--- plotutils-2.6/pic2plot/gram.yy~	2000-06-28 06:22:21.000000000 +0200
++++ plotutils-2.6/pic2plot/gram.yy	2013-11-03 17:29:47.788412792 +0100
+@@ -1833,7 +1833,7 @@
+ 	    {
+ 	      one_format += *form++;
+ 	      one_format += '\0';
+-	      sprintf(sprintf_buf, one_format.contents());
++	      sprintf(sprintf_buf, "%s", one_format.contents());
+ 	    }
+ 	  else 
+ 	    {

@@ -14,6 +14,7 @@ Source0:	http://ftp.gnu.org/gnu/plotutils/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-ac.patch
 Patch2:		%{name}-libpng15.patch
+Patch3:		%{name}-format.patch
 URL:		http://www.gnu.org/software/plotutils/plotutils.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -200,6 +201,7 @@ Biblioteka statyczna libxmi.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %{__libtoolize}
