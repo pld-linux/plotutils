@@ -45,3 +45,40 @@
  @end direntry
  
  @ifinfo
+diff -urN plotutils-2.6.org/info/plotutils.texi plotutils-2.6/info/plotutils.texi
+--- plotutils-2.6.org/info/plotutils.texi	2009-07-31 12:57:16.000000000 +0200
++++ plotutils-2.6/info/plotutils.texi	2013-11-05 20:56:00.000000000 +0100
+@@ -4829,12 +4829,12 @@
+ @tex
+ @example
+ @group
+-$x' = f(t,x,y,@ldots{},z)$
+-$y' = g(t,x,y,@ldots{},z)$
++$x' = f(t,x,y,\ldots,z)$
++$y' = g(t,x,y,\ldots,z)$
+    .
+    .
+    .
+-$z' = h(t,x,y,@ldots{},z)$
++$z' = h(t,x,y,\ldots,z)$
+ @end group
+ @end example
+ @end tex
+@@ -5904,7 +5904,7 @@
+ @end ifnottex
+ @tex
+ @example
+-$y = \pm (2(t-C))^{1/2}$,
++$y = \pm (2(t-C))^@{1/2@}$,
+ @end example
+ @end tex
+ 
+@@ -5991,7 +5991,7 @@
+ @end ifnottex
+ @tex
+ @example 
+-$y(t) = e^{-100t} + t$.
++$y(t) = e^@{-100t@} + t$.
+ @end example
+ @end tex
+ 
