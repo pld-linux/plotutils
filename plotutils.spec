@@ -221,10 +221,11 @@ install -d $RPM_BUILD_ROOT{%{_examplesdir}/libplot-%{LIBPLOT_VERSION},%{_fontsdi
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-#install doc/h-demo.c $RPM_BUILD_ROOT%{_examplesdir}/libplot-%{LIBPLOT_VERSION}
-install fonts/pcf/*.pcf $RPM_BUILD_ROOT%{_fontsdir}/misc
+cp -p fonts/pcf/*.pcf $RPM_BUILD_ROOT%{_fontsdir}/misc
+gzip -9nf $RPM_BUILD_ROOT%{_fontsdir}/misc/*.pcf
 
-gzip -9nf $RPM_BUILD_ROOT%{_fontsdir}/misc/*
+# packaged as %doc
+%{__rm} $RPM_BUILD_ROOT%{_datadir}/libplot/{README,*.txt,*.bib}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -279,8 +280,7 @@ fontpostinst misc
 
 %files -n libplot
 %defattr(644,root,root,755)
-%doc doc/{*.txt,*.bib}
-%doc libplot/{DEDICATION,HUMOR,README*,VERSION}
+%doc doc/{*.txt,*.bib} libplot/{DEDICATION,HUMOR,README*,VERSION}
 %attr(755,root,root) %{_libdir}/libplot.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libplot.so.2
 %{_fontsdir}/misc/tekfont*.pcf.gz
