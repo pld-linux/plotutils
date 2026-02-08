@@ -9,7 +9,7 @@ Version:	2.6
 Release:	16
 License:	GPL v3+
 Group:		Applications/Graphics
-Source0:	http://ftp.gnu.org/gnu/plotutils/%{name}-%{version}.tar.gz
+Source0:	https://ftp.gnu.org/gnu/plotutils/%{name}-%{version}.tar.gz
 # Source0-md5:	c08a424bd2438c80a786a7f4b5bb6a40
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-ac.patch
