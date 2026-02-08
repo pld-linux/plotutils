@@ -281,13 +281,13 @@ fontpostinst misc
 %files -n libplot
 %defattr(644,root,root,755)
 %doc doc/{*.txt,*.bib} libplot/{DEDICATION,HUMOR,README*,VERSION}
-%attr(755,root,root) %{_libdir}/libplot.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libplot.so.2
+%{_libdir}/libplot.so.*.*.*
+%ghost %{_libdir}/libplot.so.2
 %{_fontsdir}/misc/tekfont*.pcf.gz
 
 %files -n libplot-devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libplot.so
+%{_libdir}/libplot.so
 %{_libdir}/libplot.la
 %{_includedir}/plot.h
 %{_includedir}/plotcompat.h
@@ -299,12 +299,12 @@ fontpostinst misc
 
 %files -n libplotter
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libplotter.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libplotter.so.2
+%{_libdir}/libplotter.so.*.*.*
+%ghost %{_libdir}/libplotter.so.2
 
 %files -n libplotter-devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libplotter.so
+%{_libdir}/libplotter.so
 %{_libdir}/libplotter.la
 %{_includedir}/plotter.h
 
@@ -315,12 +315,12 @@ fontpostinst misc
 %files -n libxmi
 %defattr(644,root,root,755)
 %doc libxmi/{AUTHORS,NEWS,README*,TODO,VERSION}
-%attr(755,root,root) %{_libdir}/libxmi.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libxmi.so.0
+%{_libdir}/libxmi.so.*.*.*
+%ghost %{_libdir}/libxmi.so.0
 
 %files -n libxmi-devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libxmi.so
+%{_libdir}/libxmi.so
 %{_libdir}/libxmi.la
 %{_includedir}/xmi.h
 %{_infodir}/libxmi.info*
