@@ -6,7 +6,7 @@ Name:		plotutils
 Version:	2.6
 # Don't decrease release if LIBPLOT/LIBXMI versions are not increased, as then
 # those subpackages get then lower release
-Release:	16
+Release:	17
 License:	GPL v3+
 Group:		Applications/Graphics
 Source0:	https://ftp.gnu.org/gnu/plotutils/%{name}-%{version}.tar.gz
@@ -15,6 +15,7 @@ Patch0:		%{name}-info.patch
 Patch1:		%{name}-ac.patch
 Patch2:		%{name}-libpng15.patch
 Patch3:		%{name}-format.patch
+Patch4:		%{name}-c23.patch
 URL:		http://www.gnu.org/software/plotutils/plotutils.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -202,6 +203,7 @@ Biblioteka statyczna libxmi.
 %patch -P1 -p1
 %patch -P2 -p1
 %patch -P3 -p1
+%patch -P4 -p1
 
 %build
 %{__libtoolize}

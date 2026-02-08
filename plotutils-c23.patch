@@ -1,0 +1,38 @@
+--- plotutils-2.6/include/sys-defines.h.orig	2008-07-16 02:04:04.000000000 +0200
++++ plotutils-2.6/include/sys-defines.h	2026-02-08 10:51:27.635492474 +0100
+@@ -254,6 +254,7 @@ extern __C_LINKAGE void free (void * ptr
+ /**************************************************************************/
+ 
+ #ifndef __cplusplus
++#if !defined(__STDC_VERSION__) || (__STDC_VERSION__ < 202311L)
+ #ifdef __STDC__
+ typedef enum { false = 0, true = 1 } bool;
+ #else  /* not __STDC__, do things the old-fashioned way */
+@@ -261,6 +262,7 @@ typedef int bool;
+ #define false 0
+ #define true 1
+ #endif /* not __STDC__ */
++#endif
+ #endif /* not __cplusplus */
+ 
+ /**************************************************************************/
+--- plotutils-2.6/libxmi/sys-defines.h.orig	2005-11-27 23:14:34.000000000 +0100
++++ plotutils-2.6/libxmi/sys-defines.h	2026-02-08 10:56:13.147019510 +0100
+@@ -167,7 +167,7 @@ extern __C_LINKAGE void free (void * ptr
+ /**************************************************************************/
+ 
+ #ifndef __cplusplus
+-#ifndef HAVE_BOOL_IN_CC
++#if !defined(__STDC_VERSION__) || (__STDC_VERSION__ < 202311L)
+ #ifdef __STDC__
+ typedef enum { false = 0, true = 1 } bool;
+ #else  /* not __STDC__, do things the old-fashioned way */
+@@ -175,7 +175,7 @@ typedef int bool;
+ #define false 0
+ #define true 1
+ #endif
+-#endif /* not HAVE_BOOL_IN_CC */
++#endif
+ #endif /* not __cplusplus */
+   
+ /**************************************************************************/
